@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neat Tech</title>
+    <description>Pretty neat tech things!</description>
+    <link>http://sawyercade.github.io/</link>
+    <atom:link href="http://sawyercade.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Test post</title>
+        <description>&lt;p&gt;What’s the url?&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 Jul 2015 19:56:00 -0500</pubDate>
+        <link>http://sawyercade.github.io/test/2015/07/22/test-post/</link>
+        <guid isPermaLink="true">http://sawyercade.github.io/test/2015/07/22/test-post/</guid>
+      </item>
+    
+  </channel>
+</rss>

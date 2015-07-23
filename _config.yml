@@ -1,9 +1,9 @@
 # Site settings
-title:       Neat tech 
-email:       sawyer@sawyeranderson.io
+title:       Neat Tech 
+email:       "sawyer@sawyeranderson.io"
 author:      Sawyer Anderson
-description: "For techy things that make you say \"Wow, that's pretty neat!\""
-baseurl:     "/pixyll"
+baseurl:     ''
+description: "Pretty neat tech things!"
 url:         "http://sawyercade.github.io"
 
 # Build settings
@@ -18,18 +18,18 @@ google_analytics:
 animated:           false
 show_related_posts: false
 show_post_footers:  false
-show_social_icons:  false
+show_social_icons:  true
 
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname:
 
 # Social icons
-github_username:
+github_username: sawyercade
 stackoverflow_id:
-twitter_username:
+twitter_username: sawyercade
 google_plus_id:
-linkedin_username:
+linkedin_username: sawyer-anderson
 angellist_username:
 medium_id:
 bitcoin_url:
@@ -37,18 +37,18 @@ paypal_url:
 flattr_button:
 
 # Post sharing icons
-show_sharing_icons: false
+show_sharing_icons: true
 share_text: 'Share this post!'
 # Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
+share_facebook: true
+share_twitter: true
 share_googleplus: false
-share_linkedin: false
+share_linkedin: true
 share_digg: false
 share_tumblr: false
-share_reddit: false
+share_reddit: true
 share_stumbleupon: false
-share_hackernews: false
+share_hackernews: true
 
 # Build settings
 markdown:     kramdown
