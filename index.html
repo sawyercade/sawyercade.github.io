@@ -163,6 +163,27 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 .contact .body{display:grid;gap:20px}
 .contact .body p{max-width:var(--measure)}
 footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);font-size:15px;color:var(--muted)}
+.posts a{grid-template-columns:7rem minmax(0,1fr) 128px}
+.posts .pthumb{grid-column:3;grid-row:1 / span 3;width:128px;height:80px;object-fit:cover;border-radius:6px;margin-top:3px;background:var(--rule);border:1px solid var(--rule)}
+@media (max-width:560px){.posts a{grid-template-columns:minmax(0,1fr) 88px}.posts .pthumb{grid-column:2;grid-row:1 / span 3;width:88px;height:55px}}
+.posts a{display:grid;grid-template-columns:128px minmax(0,1fr);gap:0 28px;align-items:start}
+.posts .side{display:flex;flex-direction:column;gap:8px}
+.posts .side .pthumb{grid-column:auto;grid-row:auto;margin-top:3px}
+.posts .side time{padding-top:0}
+.posts .body{display:grid;gap:2px;min-width:0}
+.posts .body .why,.posts .body .pub{grid-column:auto}
+@media (max-width:560px){.posts a{grid-template-columns:88px minmax(0,1fr);gap:0 16px}.posts .side{gap:6px}.posts .side time{font-size:13px}}
+.posts .pub time{font-size:inherit;color:inherit;padding-top:0}
+.part .picon{display:block;flex:none;width:15px;height:auto;color:var(--accent)}
+.jobs .co{display:flex;align-items:center;gap:9px}
+.jobs .orglogo{flex:none;width:20px;height:20px;border-radius:4px;object-fit:contain}
+.hm-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,26rem);column-gap:44px;row-gap:20px;align-items:start}
+.hm-fig{margin:0;display:grid;gap:6px;min-width:0}
+.hm-fig img{display:block;width:100%;height:auto;max-width:100%;border-radius:8px;border:1px solid var(--rule);background:var(--placeholder)}
+.hm-fig figcaption{font-size:13px;color:var(--muted)}
+@media (max-width:860px){.hm-intro{grid-template-columns:minmax(0,1fr)}}
+.sub + .sub{margin-top:52px}
+.sublabel{font-size:1.25rem;line-height:1.3;font-weight:600;margin:0 0 18px;color:var(--ink)}
 </style>
 <link rel="canonical" href="https://sawyeranderson.dev/">
 <meta property="og:title" content="Sawyer Anderson">
@@ -176,8 +197,7 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
     <nav aria-label="Sections">
       <a href="#about">About</a>
       <a href="#hivemind">Hivemind Enterprise</a>
-      <a href="#video">Video</a>
-      <a href="#writing">Articles</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -188,7 +208,7 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
       <p class="role">Product leader for physical AI and robotics platforms.</p>
       <p class="lead">Founding product manager of Hivemind Enterprise at Shield AI, the development platform that aerospace and defense teams use to build, test, and deploy AI pilots. Before product, I spent 7+ years as an engineer building AI/ML and data platforms.</p>
       <div class="actions">
-        <a class="btn primary" href="#video">See the portfolio</a>
+        <a class="btn primary" href="#portfolio">See Portfolio</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/sawyer-anderson-86096255/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
@@ -198,11 +218,11 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
   <section class="sec" aria-labelledby="impact-h">
     <h2 class="label" id="impact-h">Impact</h2>
     <dl class="figs">
-      <div><dt>30+</dt><dd>enterprise customers on Hivemind Enterprise</dd></div>
-      <div><dt>$50M+</dt><dd>ARR product line, built from zero in 2 years</dd></div>
-      <div><dt>$1B+</dt><dd>supported solutions revenue</dd></div>
+          <div><dt>$50M+ ARR</dt><dd>product line, grown from $0 in 2 years</dd></div>
+      <div><dt>$1B+</dt><dd>solutions revenue powered by Hivemind Enterprise</dd></div>
+      <div><dt>30+</dt><dd>enterprise customers</dd></div>
       <div><dt>150+</dt><dd>engineers supported as the sole PM</dd></div>
-    </dl>
+</dl>
   </section>
 
   <section class="sec" id="about" aria-labelledby="about-h">
@@ -211,11 +231,12 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
       <p>I build development platforms for physical AI: workflows, runtimes, and infrastructure that let engineering teams put autonomy on real-world systems fast. At Shield AI I took Hivemind Enterprise from the initial business case and greenfield design through pre-alpha, alpha, beta and general availability, then eight quarterly releases including the first long-term support release.</p>
       <p>Before that I led Shield AI's development, test, and simulation products: Hivemind Forge, Hivemind Simulation, and EdgeOS. My engineering years were spent on ML and data platforms at Rover and DataRank, so I know what developers need from a platform because I used platforms like these myself, and still do today.</p>
       <ul class="jobs">
-        <li><span class="co">Shield AI</span><span class="meta">Senior Staff Product Manager, Hivemind Enterprise (lead PM) · San Diego · 2023–2026</span><span class="what">Founding PM and product lead for the platform customers use to build and deploy AI pilots to unmanned systems.</span></li>
-        <li><span class="co">Shield AI</span><span class="meta">Staff Product Manager, Hivemind Forge, Simulation, and EdgeOS · San Diego · 2019–2023</span><span class="what">Created Forge, built the simulation platform, and took EdgeOS from research prototype to the runtime in every Hivemind system.</span></li>
-        <li><span class="co">Rover</span><span class="meta">Engineering Manager, AI/ML Platform · Seattle · 2017–2019</span><span class="what">Built and led the team behind Rover's ML platform. Ranking, matching, and fraud models built on it drove a 35%+ increase in customer lifetime value.</span></li>
-        <li><span class="co">DataRank</span><span class="meta">Software Engineer · Seattle and Fayetteville · 2015–2017</span><span class="what">Built the streaming data and ML platform behind social analytics for Fortune 500 brands.</span></li>
-        <li><span class="co">University of Arkansas</span><span class="meta">B.S., Computer Science · magna cum laude</span></li>
+        <li><span class="co"><img class="orglogo" src="img/logos/shieldai.png" alt="" width="20" height="20">Shield AI</span><span class="meta">Senior Staff Product Manager, Hivemind Enterprise (lead PM) · San Diego · 2023–2026</span><span class="what">Founding PM and product lead for the platform customers use to build and deploy AI pilots to unmanned systems.</span></li>
+        <li><span class="co"><img class="orglogo" src="img/logos/shieldai.png" alt="" width="20" height="20">Shield AI</span><span class="meta">Staff Product Manager, Hivemind Forge, Simulation, and EdgeOS · San Diego · 2019–2023</span><span class="what">Created Forge, built the simulation platform, and took EdgeOS from research prototype to the runtime in every Hivemind system.</span></li>
+        <li><span class="co"><img class="orglogo" src="img/logos/rover.png" alt="" width="20" height="20">Rover</span><span class="meta">Engineering Manager, AI/ML Platform · Seattle · 2017–2019</span><span class="what">Built and led the team behind Rover's ML platform. Search, ranking, matching, and fraud models built on it drove a 35%+ increase in customer lifetime value.</span></li>
+        <li><span class="co"><img class="orglogo" src="img/logos/datarank.png" alt="" width="20" height="20">DataRank</span><span class="meta">Software Engineer · Seattle and Fayetteville · 2015–2017</span><span class="what">Built the streaming data and ML platform behind social analytics for Fortune 500 brands.</span></li>
+        <li><span class="co"><img class="orglogo" src="img/logos/gatech.png" alt="" width="20" height="20">Georgia Institute of Technology</span><span class="meta">M.S., Computer Science (AI Specialization) · exp. 2029</span></li>
+        <li><span class="co"><img class="orglogo" src="img/logos/uark.png" alt="" width="20" height="20">University of Arkansas</span><span class="meta">B.S., Computer Science · magna cum laude</span></li>
       </ul>
     </div>
   </section>
@@ -223,12 +244,12 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
   <section class="sec" id="hivemind" aria-labelledby="hm-h">
     <h2 class="label" id="hm-h">Hivemind Enterprise</h2>
     <div class="prose">
-      <p>Hivemind Enterprise is an autonomy development platform. Aircraft OEMs, defense primes, research organizations, and governments use Hivemind Enterprise to build autonomy for a specific platform and mission set (see videos and articles below). It has four parts.</p>
+      <div class="hm-intro"><p>Hivemind Enterprise is an AI and autonomy development platform. Aircraft OEMs, defense primes, research organizations, and governments use Hivemind Enterprise to build autonomy for a specific vehicle platform and mission set (see videos and articles below). It has four parts.</p><figure class="hm-fig"><img src="img/hivemind.jpg" alt="Engineer working at a laptop in a hangar beside a jet-powered drone" width="540" height="385" loading="lazy"><figcaption>Image: Shield AI, shield.ai/hivemind</figcaption></figure></div>
       <div class="parts">
-        <div class="part"><h3>Forge</h3><p>Workflows to design, develop, train, test, and deploy AI pilots, including scenario generation and simulation at scale.</p></div>
-        <div class="part"><h3>EdgeOS</h3><p>The low-latency runtime on board every Hivemind-enabled aircraft and vessel, built for mission-critical robotics.</p></div>
-        <div class="part"><h3>Pilot</h3><p>A catalog of extensible autonomy blocks: sensing, world modeling, state estimation, planning and controls, and multi-agent teaming behaviors. Also includes reference architecture and reference implementation pilots.</p></div>
-        <div class="part"><h3>Commander</h3><p>Command-and-control interfaces connecting Hivemind-enabled systems to human operators.</p></div>
+        <div class="part"><h3><svg class="picon" viewBox="0 0 35 48" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.5482 0H17.6073V4.05914H13.5482V0Z"/><path d="M17.5595 3.91406H21.6186V7.9732H17.5595V3.91406Z"/><path d="M17.5594 0.0078125H21.6185V4.06695H17.5594V0.0078125Z"/><path d="M26.9296 0H30.9887V4.05914H26.9296V0Z"/><path d="M30.9409 3.91406H35V7.9732H30.9409V3.91406Z"/><path d="M30.9409 0.0078125H35V4.06695H30.9409V0.0078125Z"/><path d="M13.5482 13.1875H17.6073V17.2466H13.5482V13.1875Z"/><path d="M17.5594 17.1016H21.6185V21.1607H17.5594V17.1016Z"/><path d="M17.5594 13.1953H21.6185V17.2545H17.5594V13.1953Z"/><path d="M13.4012 26.8047H17.4603V30.8638H13.4012V26.8047Z"/><path d="M17.4125 30.7188H21.4716V34.7779H17.4125V30.7188Z"/><path d="M17.4125 26.8125H21.4716V30.8716H17.4125V26.8125Z"/><path d="M26.8018 26.8047H30.8609V30.8638H26.8018V26.8047Z"/><path d="M30.813 30.7188H34.8721V34.7779H30.813V30.7188Z"/><path d="M30.813 26.8125H34.8721V30.8716H30.813V26.8125Z"/><path d="M0.160374 0H4.21947V4.05914H0.160374V0Z"/><path d="M4.17185 3.91406H8.23095V7.9732H4.17185V3.91406Z"/><path d="M4.17182 0.0078125H8.23092V4.06695H4.17182V0.0078125Z"/><path d="M0.159668 13.1875H4.21876V17.2466H0.159668V13.1875Z"/><path d="M4.17065 17.1016H8.22975V21.1607H4.17065V17.1016Z"/><path d="M4.17089 13.1953H8.22999V17.2545H4.17089V13.1953Z"/><path d="M0 26.375H4.0591V30.4341H0V26.375Z"/><path d="M4.01099 30.2812H8.07008V34.3404H4.01099V30.2812Z"/><path d="M4.01133 26.383H8.07043V30.4422H4.01133V26.383Z"/><path d="M0.380127 39.4609H4.43922V43.5201H0.380127V39.4609Z"/><path d="M4.39111 43.3672H8.45021V47.4263H4.39111V43.3672Z"/><path d="M4.39135 39.4688H8.45045V43.5279H4.39135V39.4688Z"/></svg>Forge</h3><p>Workflows to design, develop, train, test, and deploy AI pilots, including scenario generation and simulation at scale.</p></div>
+        <div class="part"><h3><svg class="picon" viewBox="0 0 35 48" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.5482 0H17.6073V4.05914H13.5482V0Z"/><path d="M17.5595 3.91406H21.6186V7.9732H17.5595V3.91406Z"/><path d="M17.5594 0.00804234H21.6185V4.06718H17.5594V0.00804234Z"/><path d="M26.9296 0H30.9887V4.05914H26.9296V0Z"/><path d="M30.9409 3.91406H35V7.9732H30.9409V3.91406Z"/><path d="M30.9408 0.00804234H34.9999V4.06718H30.9408V0.00804234Z"/><path d="M13.5482 13.1875H17.6073V17.2466H13.5482V13.1875Z"/><path d="M17.5594 17.1016H21.6185V21.1607H17.5594V17.1016Z"/><path d="M17.5594 13.1955H21.6185V17.2547H17.5594V13.1955Z"/><path d="M0.160374 0H4.21947V4.05914H0.160374V0Z"/><path d="M4.17185 3.91406H8.23095V7.9732H4.17185V3.91406Z"/><path d="M4.17175 0.00804234H8.23084V4.06718H4.17175V0.00804234Z"/><path d="M0.159668 13.1875H4.21876V17.2466H0.159668V13.1875Z"/><path d="M4.17065 17.1016H8.22975V21.1607H4.17065V17.1016Z"/><path d="M4.171 13.1955H8.23009V17.2547H4.171V13.1955Z"/><path d="M0 26.375H4.0591V30.4341H0V26.375Z"/><path d="M4.01099 30.2812H8.07008V34.3404H4.01099V30.2812Z"/><path d="M4.01133 26.383H8.07043V30.4422H4.01133V26.383Z"/><path d="M0.380127 39.4609H4.43922V43.5201H0.380127V39.4609Z"/><path d="M4.39111 43.3672H8.45021V47.4263H4.39111V43.3672Z"/><path d="M4.39135 39.4688H8.45045V43.5279H4.39135V39.4688Z"/><path d="M13.4012 39.4609H17.4603V43.5201H13.4012V39.4609Z"/><path d="M17.4125 43.3672H21.4716V47.4263H17.4125V43.3672Z"/><path d="M17.4125 39.4688H21.4716V43.5279H17.4125V39.4688Z"/><path d="M26.8018 39.4609H30.8609V43.5201H26.8018V39.4609Z"/><path d="M30.813 43.3672H34.8721V47.4263H30.813V43.3672Z"/><path d="M30.813 39.4688H34.8721V43.5279H30.813V39.4688Z"/><path d="M13.3845 26.5469H17.4436V30.606H13.3845V26.5469Z"/><path d="M17.3958 30.4609H21.4548V34.5201H17.3958V30.4609Z"/><path d="M17.3957 26.5547H21.4548V30.6138H17.3957V26.5547Z"/><path d="M26.8018 19.8281H30.8609V23.8873H26.8018V19.8281Z"/><path d="M30.813 23.7422H34.8721V27.8013H30.813V23.7422Z"/><path d="M30.813 19.8359H34.8721V23.8951H30.813V19.8359Z"/></svg>EdgeOS</h3><p>The low-latency runtime on board every Hivemind-enabled aircraft and vessel, built for mission-critical robotics.</p></div>
+        <div class="part"><h3><svg class="picon" viewBox="0 0 35 48" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.5481 0H17.6072V4.05914H13.5481V0Z"/><path d="M17.5592 3.91406H21.6183V7.9732H17.5592V3.91406Z"/><path d="M17.5593 0.00804138H21.6184V4.06718H17.5593V0.00804138Z"/><path d="M26.9297 0H30.9888V4.05914H26.9297V0Z"/><path d="M30.9409 3.91406H35V7.9732H30.9409V3.91406Z"/><path d="M30.9409 0.00804138H35V4.06718H30.9409V0.00804138Z"/><path d="M13.5482 13.1875H17.6073V17.2466H13.5482V13.1875Z"/><path d="M17.5594 17.1016H21.6185V21.1607H17.5594V17.1016Z"/><path d="M17.5594 13.1953H21.6185V17.2545H17.5594V13.1953Z"/><path d="M26.9297 13.1875H30.9888V17.2466H26.9297V13.1875Z"/><path d="M30.9409 17.1016H35V21.1607H30.9409V17.1016Z"/><path d="M30.9409 13.1953H35V17.2545H30.9409V13.1953Z"/><path d="M0.160389 0H4.21949V4.05914H0.160389V0Z"/><path d="M4.17235 3.91406H8.23145V7.9732H4.17235V3.91406Z"/><path d="M4.17183 0.00804138H8.23092V4.06718H4.17183V0.00804138Z"/><path d="M0.159668 13.1875H4.21876V17.2466H0.159668V13.1875Z"/><path d="M4.17065 17.1016H8.22975V21.1607H4.17065V17.1016Z"/><path d="M4.17064 13.1953H8.22974V17.2545H4.17064V13.1953Z"/><path d="M0 26.375H4.0591V30.4341H0V26.375Z"/><path d="M4.01099 30.2812H8.07008V34.3404H4.01099V30.2812Z"/><path d="M4.01108 26.383H8.07018V30.4422H4.01108V26.383Z"/><path d="M0.380127 39.4609H4.43922V43.5201H0.380127V39.4609Z"/><path d="M4.39111 43.3672H8.45021V47.4263H4.39111V43.3672Z"/><path d="M4.3912 39.469H8.4503V43.5281H4.3912V39.469Z"/><path d="M13.3844 26.5469H17.4435V30.606H13.3844V26.5469Z"/><path d="M17.3956 30.4609H21.4547V34.5201H17.3956V30.4609Z"/><path d="M17.3956 26.5547H21.4547V30.6138H17.3956V26.5547Z"/></svg>Pilot</h3><p>A catalog of extensible autonomy blocks: sensing, world modeling, state estimation, planning and controls, and multi-agent teaming behaviors. Also includes reference architecture and reference implementation pilots.</p></div>
+        <div class="part"><h3><svg class="picon" viewBox="0 0 35 48" fill="currentColor" aria-hidden="true" focusable="false"><path d="M13.5482 0H17.6073V4.05914H13.5482V0Z"/><path d="M17.5594 3.91661H21.6185V7.97575H17.5594V3.91661Z"/><path d="M17.5594 0.00804138H21.6185V4.06718H17.5594V0.00804138Z"/><path d="M26.9296 0H30.9887V4.05914H26.9296V0Z"/><path d="M30.9409 3.91661H35V7.97575H30.9409V3.91661Z"/><path d="M30.9408 0.00804138H34.9999V4.06718H30.9408V0.00804138Z"/><path d="M0.160374 0H4.21947V4.05914H0.160374V0Z"/><path d="M4.17178 3.91661H8.23088V7.97575H4.17178V3.91661Z"/><path d="M4.17175 0.00804138H8.23084V4.06718H4.17175V0.00804138Z"/><path d="M0.159771 13.1913H4.21887V17.2505H0.159771V13.1913Z"/><path d="M4.17085 17.108H8.22995V21.1671H4.17085V17.108Z"/><path d="M4.17099 13.1991H8.23009V17.2583H4.17099V13.1991Z"/><path d="M0 26.3745H4.0591V30.4336H0V26.3745Z"/><path d="M4.01108 30.2832H8.07018V34.3424H4.01108V30.2832Z"/><path d="M4.01133 26.3825H8.07043V30.4416H4.01133V26.3825Z"/><path d="M13.5613 13.1913H17.6204V17.2505H13.5613V13.1913Z"/><path d="M17.5725 17.108H21.6316V21.1671H17.5725V17.108Z"/><path d="M17.5725 13.1991H21.6316V17.2583H17.5725V13.1991Z"/><path d="M13.401 26.3745H17.4601V30.4336H13.401V26.3745Z"/><path d="M17.4123 30.2832H21.4714V34.3424H17.4123V30.2832Z"/><path d="M17.4122 26.3825H21.4713V30.4416H17.4122V26.3825Z"/><path d="M0.380112 39.4582H4.43921V43.5174H0.380112V39.4582Z"/><path d="M4.39119 43.3668H8.45029V47.4259H4.39119V43.3668Z"/><path d="M4.39119 39.4663H8.45028V43.5254H4.39119V39.4663Z"/><path d="M13.3845 39.359H17.4436V43.4181H13.3845V39.359Z"/><path d="M17.3957 43.2755H21.4548V47.3347H17.3957V43.2755Z"/><path d="M17.3957 39.367H21.4548V43.4261H17.3957V39.367Z"/><path d="M26.8017 39.359H30.8608V43.4181H26.8017V39.359Z"/><path d="M30.8129 43.2755H34.872V47.3347H30.8129V43.2755Z"/><path d="M30.8129 39.367H34.872V43.4261H30.8129V39.367Z"/></svg>Commander</h3><p>Command-and-control interfaces connecting Hivemind-enabled systems to human operators.</p></div>
       </div>
       <div class="scope"><span class="scope-label">My role</span><p>Lead product manager for the end-to-end platform. Previously, I created and led product management for Forge and EdgeOS.</p></div>
 
@@ -241,7 +262,7 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
           <li><b>JULY 8</b><span>First official demonstration in Minnesota</span></li>
           <li><b>OCT 8</b><span>Two-aircraft autonomous ISR mission near Phoenix</span></li>
         </ol>
-        <p class="also">See <a href="#video">Video</a> and <a href="#writing">Articles</a> for more case studies.</p>
+        <p class="also">See <a href="#video">Videos</a> and <a href="#writing">Articles</a> for more case studies.</p>
       </div>
 
       <ul class="fleet" aria-label="Platforms flown by Hivemind">
@@ -251,8 +272,10 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
     </div>
   </section>
 
-  <section class="sec" id="video" aria-labelledby="v-h">
-    <h2 class="label" id="v-h">Video</h2>
+  <section class="sec" id="portfolio" aria-labelledby="pf-h">
+    <h2 class="label" id="pf-h">Portfolio</h2>
+    <div class="sub" id="video">
+    <h3 class="sublabel" id="v-h">Videos</h3>
     <ul class="vids">
       <li class="vid"><a href="https://www.youtube.com/watch?v=EYzmq1fXKas" target="_blank" rel="noopener">
         <div class="screen has-thumb"><img class="thumb" src="https://i.ytimg.com/vi/EYzmq1fXKas/hqdefault.jpg" alt="" loading="lazy" decoding="async"><div><div class="plat">YFQ-44A</div><div class="pw">Powered by Hivemind</div></div><span class="play" aria-hidden="true"></span></div>
@@ -291,39 +314,40 @@ footer{padding-top:28px;padding-bottom:44px;border-top:1px solid var(--rule);fon
         <div class="screen has-thumb"><img class="thumb" src="https://i.ytimg.com/vi/xLTr2ns5wnA/hqdefault.jpg" alt="" loading="lazy" decoding="async"><div><div class="plat">Hivemind SDK</div><div class="pw">Actuate 2025 talk</div></div><span class="play" aria-hidden="true"></span></div>
         <div class="cap"><b>Accelerating Autonomy Development with the Hivemind SDK</b><span>Shield AI engineering talk at Foxglove's robotics developer conference · Foxglove on YouTube</span><span class="vmeta">2025 · 20:15</span></div></a></li>
     </ul>
-  </section>
+  </div>
 
-  <section class="sec" id="writing" aria-labelledby="w-h">
-    <h2 class="label" id="w-h">Articles</h2>
+    <div class="sub" id="writing">
+    <h3 class="sublabel" id="w-h">Articles</h3>
     <ul class="posts">
       <li><a href="https://shield.ai/the-smartest-way-to-build-autonomy-not-alone/" target="_blank" rel="noopener">
-        <time datetime="2025-06-12">Jun 2025</time><span class="t">The Smartest Way to Build Autonomy is with Hivemind Enterprise</span>
-        <span class="why">The case for building autonomy on a platform instead of from scratch, with Booz Allen as the example customer.</span><span class="pub">Shield AI blog</span></a></li>
-      <li><a href="https://shield.ai/shield-ai-and-mitsubishi-heavy-industries-ltd-complete-autonomous-flight-tests-in-under-60-days/" target="_blank" rel="noopener">
-        <time datetime="2026-03-17">Mar 2026</time><span class="t">Shield AI and Mitsubishi Heavy Industries complete autonomous flight tests in under 60 days</span>
-        <span class="why">A customer building on Hivemind Enterprise went from software-in-the-loop to flight in under two months.</span><span class="pub">Shield AI news</span></a></li>
-      <li><a href="https://shield.ai/news/shield-ai-raises-240m/" target="_blank" rel="noopener">
-        <time datetime="2025-03-06">Mar 2025</time><span class="t">Shield AI raises $240M at a $5.3B valuation to scale Hivemind Enterprise</span>
-        <span class="why">The funding round was raised to take Hivemind Enterprise to more OEMs, governments, and companies.</span><span class="pub">Shield AI news</span></a></li>
-      <li><a href="https://shield.ai/shield-ai-partners-with-korea-aerospace-industries-to-advance-ai-powered-autonomy-with-hivemind-enterprise/" target="_blank" rel="noopener">
-        <time datetime="2025-03-20">Mar 2025</time><span class="t">Shield AI partners with Korea Aerospace Industries on Hivemind Enterprise</span>
-        <span class="why">KAI adopts the platform to develop and test its own AI pilots for crewed-uncrewed teaming.</span><span class="pub">Shield AI news</span></a></li>
-      <li><a href="https://shield.ai/?p=15256" target="_blank" rel="noopener">
-        <time datetime="2026-03-24">Mar 2026</time><span class="t">Hivemind flies on the Destinus Hornet after a two-month integration</span>
-        <span class="why">A third-party airframe, integrated in two months, rerouting itself around geofences changed mid-flight.</span><span class="pub">Shield AI news</span></a></li>
-      <li><a href="https://aws.amazon.com/blogs/publicsector/shield-ai-and-aws-collaborate-to-deliver-mission-autonomy-at-fleet-scale" target="_blank" rel="noopener">
-        <time datetime="2025-06-25">Jun 2025</time><span class="t">Shield AI and AWS collaborate to deliver mission autonomy at fleet scale</span>
-        <span class="why">How Hivemind Enterprise and AWS IoT let teams build, simulate, and push AI pilots to whole fleets from the cloud.</span><span class="pub">AWS Public Sector blog</span></a></li>
-      <li><a href="https://shield.ai/booz-allen-and-shield-ai-partnership-brings-new-autonomous-airborne-solutions-to-u-s-military/" target="_blank" rel="noopener">
-        <time datetime="2025-03-18">Mar 2025</time><span class="t">Booz Allen and Shield AI partner on autonomous airborne solutions</span>
-        <span class="why">A major defense integrator builds mission autonomy for the U.S. military on Hivemind Enterprise.</span><span class="pub">Shield AI news</span></a></li>
-      <li><a href="https://shield.ai/hivemind-edgeos-a-game-changer-for-autonomous-robotics/" target="_blank" rel="noopener">
-        <time datetime="2025-09-25">Sep 2025</time><span class="t">Hivemind EdgeOS: A Game-Changer for Autonomous Robotics</span>
-        <span class="why">A technical look at EdgeOS, the runtime I took from prototype to production, and how it compares with ROS.</span><span class="pub">Shield AI blog</span></a></li>
+        <span class="side"><img class="pthumb" src="img/articles/smartest.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">The Smartest Way to Build Autonomy is with Hivemind Enterprise</span>
+        <span class="why">The case for building autonomy on a platform instead of from scratch, with Booz Allen as the example customer.</span><span class="pub">Shield AI blog, <time datetime="2025-06-12">Jun 2025</time></span></span></a></li>
       <li><a href="https://shield.ai/from-concept-to-combat-how-hivemind-sdk-powers-next-gen-autonomy/" target="_blank" rel="noopener">
-        <time datetime="2024-11-14">Nov 2024</time><span class="t">From Concept to Combat: How the Hivemind SDK Powers Next-Gen Autonomy</span>
-        <span class="why">The SDK's reference architectures, autonomy libraries, and test tools, and how they shorten time to a new platform.</span><span class="pub">Shield AI blog</span></a></li>
+        <span class="side"><img class="pthumb" src="img/articles/sdk.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">From Concept to Combat: How the Hivemind SDK Powers Next-Gen Autonomy</span>
+        <span class="why">The SDK's reference architectures, autonomy libraries, and test tools, and how they shorten time to a new platform.</span><span class="pub">Shield AI blog, <time datetime="2024-11-14">Nov 2024</time></span></span></a></li>
+      <li><a href="https://shield.ai/news/shield-ai-raises-240m/" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/raise.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Shield AI raises $240M at a $5.3B valuation to scale Hivemind Enterprise</span>
+        <span class="why">The funding round was raised to take Hivemind Enterprise to more OEMs, governments, and companies.</span><span class="pub">Shield AI news, <time datetime="2025-03-06">Mar 2025</time></span></span></a></li>
+      <li><a href="https://shield.ai/hivemind-edgeos-a-game-changer-for-autonomous-robotics/" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/edgeos.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Hivemind EdgeOS: A Game-Changer for Autonomous Robotics</span>
+        <span class="why">A technical look at EdgeOS, the runtime I took from prototype to production, and how it compares with ROS.</span><span class="pub">Shield AI blog, <time datetime="2025-09-25">Sep 2025</time></span></span></a></li>
+      <li><a href="https://shield.ai/shield-ai-and-mitsubishi-heavy-industries-ltd-complete-autonomous-flight-tests-in-under-60-days/" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/mhi.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Shield AI and Mitsubishi Heavy Industries complete autonomous flight tests in under 60 days</span>
+        <span class="why">A customer building on Hivemind Enterprise went from software-in-the-loop to flight in under two months.</span><span class="pub">Shield AI news, <time datetime="2026-03-17">Mar 2026</time></span></span></a></li>
+      <li><a href="https://shield.ai/shield-ai-partners-with-korea-aerospace-industries-to-advance-ai-powered-autonomy-with-hivemind-enterprise/" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/kai.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Shield AI partners with Korea Aerospace Industries on Hivemind Enterprise</span>
+        <span class="why">KAI adopts the platform to develop and test its own AI pilots for crewed-uncrewed teaming.</span><span class="pub">Shield AI news, <time datetime="2025-03-20">Mar 2025</time></span></span></a></li>
+      <li><a href="https://shield.ai/?p=15256" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/destinus.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Hivemind flies on the Destinus Hornet after a two-month integration</span>
+        <span class="why">A third-party airframe, integrated in two months, rerouting itself around geofences changed mid-flight.</span><span class="pub">Shield AI news, <time datetime="2026-03-24">Mar 2026</time></span></span></a></li>
+      <li><a href="https://aws.amazon.com/blogs/publicsector/shield-ai-and-aws-collaborate-to-deliver-mission-autonomy-at-fleet-scale" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/aws.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Shield AI and AWS collaborate to deliver mission autonomy at fleet scale</span>
+        <span class="why">How Hivemind Enterprise and AWS IoT let teams build, simulate, and push AI pilots to whole fleets from the cloud.</span><span class="pub">AWS Public Sector blog, <time datetime="2025-06-25">Jun 2025</time></span></span></a></li>
+      <li><a href="https://shield.ai/booz-allen-and-shield-ai-partnership-brings-new-autonomous-airborne-solutions-to-u-s-military/" target="_blank" rel="noopener">
+        <span class="side"><img class="pthumb" src="img/articles/bah.jpg" alt="" width="128" height="80" loading="lazy" decoding="async"></span><span class="body"><span class="t">Booz Allen and Shield AI partner on autonomous airborne solutions</span>
+        <span class="why">A major defense integrator builds mission autonomy for the U.S. military on Hivemind Enterprise.</span><span class="pub">Shield AI news, <time datetime="2025-03-18">Mar 2025</time></span></span></a></li>
     </ul>
+  </div>
   </section>
 
   <section class="sec contact" id="contact" aria-labelledby="c-h">
